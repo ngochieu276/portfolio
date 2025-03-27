@@ -7,6 +7,7 @@ import ArrowUpright from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import SectionHeader from "@/components/section-header";
 import { Card } from "@/components/card";
+import { style } from "framer-motion/client";
 
 const portfolioProjects = [
   {
@@ -57,10 +58,11 @@ export const ProjectsSection = () => {
           description="See how i transform concepts into engaging digital experiences."
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, idx) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 "
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-16"
+              style={{ top: `calc(64px + ${idx * 60}px)` }}
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
