@@ -6,9 +6,12 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import HeroOrbit from "@/components/hero-orbit";
 
-export const HeroSection = () => {
+export const HeroSection = ({ id }: { id: string }) => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div
+      className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip min-h-screen"
+      id={id}
+    >
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
