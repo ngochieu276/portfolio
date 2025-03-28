@@ -123,7 +123,7 @@ export const HeroSection = ({ id }: { id: string }) => {
         <div className="max-w-xl mx-auto">
           <h1
             className="font-serif font-semibold text-3xl md:text-5xl text-center mt-8 tracking-wide
-          bg-gradient-to-bl from-emerald-300 to-sky-400 text-transparent bg-clip-text"
+          bg-gradient-to-bl from-indigo-300 to-violet-500 text-transparent bg-clip-text"
           >
             Building Exceptional User Experiences
           </h1>
@@ -141,7 +141,7 @@ export const HeroSection = ({ id }: { id: string }) => {
             </Button>
           </a>
           <a href="#contact">
-            <Button className="border-emerald-300 bg-gradient-to-r from-emerald-300 to-sky-400">
+            <Button className="border-indigo-300 bg-gradient-to-r from-indigo-300 to-violet-500">
               <span>👋</span>
               <span className="font-semibold">Let&apos;s Connect</span>
             </Button>

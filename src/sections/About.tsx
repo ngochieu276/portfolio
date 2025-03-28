@@ -104,7 +104,20 @@ const hobbies = [
 export const AboutSection = ({ id }: { id: string }) => {
   const constrainRef = useRef(null);
   return (
-    <div className="py-20 bg:py-28" id={id}>
+    <div className="py-20 bg:py-28 relative overflow-x-clip" id={id}>
+      <div className="absolute top-0 left-0 w-screen h-1/2 overflow-hidden inset-0 -z-20 -mt-[180px]">
+        <div className="absolute inset-0 bg-[#020112] bg-opacity-50"></div>
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/cards-video.webm" type="video/webm" />
+          Your browser does not support
+        </video>
+      </div>
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -151,7 +164,7 @@ export const AboutSection = ({ id }: { id: string }) => {
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="absolute inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5"
+                    className="absolute inline-flex items-center gap-2 px-6 bg-gradient-to-r from-indigo-300 to-violet-500 rounded-full py-1.5"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
@@ -177,8 +190,8 @@ export const AboutSection = ({ id }: { id: string }) => {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  
             after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:outline-gray-950/30 after:rounded-full"
               >
-                <div className="animate-ping [animate-duration:2s] absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
+                <div className="animate-ping [animate-duration:2s] absolute inset-0 rounded-full bg-gradient-to-r from-indigo-300 hover:to-violet-500 -z-20"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-300 to-violet-500 -z-10"></div>
                 <Image src={smileEmoji} alt="smile" />
               </div>
             </Card>

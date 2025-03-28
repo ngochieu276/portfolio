@@ -56,8 +56,20 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
-      <div className="container">
+    <section className="pb-16 lg:py-24 relative overflow-x-clip">
+      <div className="absolute top-0 left-0 w-screen h-1/2 overflow-hidden inset-0 -z-20 -mt-[428px]">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/blackhole.webm" type="video/webm" />
+          Your browser does not support
+        </video>
+      </div>
+      <div className="container pt-24">
         <SectionHeader
           eyebrow="Real-world Results"
           title="Featured Projects"
@@ -76,7 +88,7 @@ export const ProjectsSection = () => {
               ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                  <div className="bg-gradient-to-r from-indigo-300 to-violet-500 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
@@ -92,14 +104,14 @@ export const ProjectsSection = () => {
                         className="flex gap-2 text-sm md:text-base text-white/50"
                       >
                         <div>
-                          <CheckIcon className="size-5 md:size-6 relative text-[#3EE7B7]" />
+                          <CheckIcon className="size-5 md:size-6 relative text-indigo-300" />
                         </div>
                         <span>{result.title}</span>
                       </li>
                     ))}
                   </ul>
                   <a href={project.link}>
-                    <Button className="border-emerald-300 mt-2 font-semibold bg-gradient-to-r from-emerald-300 to-sky-400">
+                    <Button className="border-emerald-300 mt-2 font-semibold bg-gradient-to-r from-indigo-300 to-violet-500">
                       <span>Visit Live Site</span>
                       <ArrowUpright className="size-4" />
                     </Button>
