@@ -1,10 +1,19 @@
 import memojiImage from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import Image from "next/image";
-import grainImage from "@/assets/images/grain.jpg";
-import StarIcon from "@/assets/icons/star.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
+import milkyWayImage from "@/assets/images/stars_milky_way.jpg";
 import HeroOrbit from "@/components/hero-orbit";
+import Button from "@/components/button";
+import Planet from "@/components/planet";
+import Mercury from "@/assets/images/mercury.jpg";
+import Neptune from "@/assets/images/neptune.jpg";
+import Uranus from "@/assets/images/uranus.jpg";
+import Saturn from "@/assets/images/saturn.jpg";
+import Jupiter from "@/assets/images/jupiter.jpg";
+import Mars from "@/assets/images/mars.jpg";
+import Venus from "@/assets/images/venus.jpg";
+import Earth from "@/assets/images/earth.jpg";
+import Sun from "@/assets/images/sun.jpg";
 
 export const HeroSection = ({ id }: { id: string }) => {
   return (
@@ -12,70 +21,90 @@ export const HeroSection = ({ id }: { id: string }) => {
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip min-h-screen"
       id={id}
     >
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,transparent)]">
+      <div className="absolute inset-0 -z-20 [mask-image:linear-gradient(to_bottom,white,black_95%,transparent)]">
         <div
-          className="absolute inset-0 -z-30 opacity-5"
+          className="absolute inset-0 -z-30 opacity-100"
           style={{
-            backgroundImage: `url(${grainImage.src})`,
+            backgroundImage: `url(${milkyWayImage.src})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="size-[620px] hero-ring"></div>
         <div className="size-[820px] hero-ring"></div>
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
+        <div className="size-[1420px] hero-ring"></div>
+        <div className="size-[1620px] hero-ring"></div>
+        <HeroOrbit size={80} rotation={0} shouldSpin spinDuration="90s">
+          <Planet img={Sun} className="size-20" />
+        </HeroOrbit>
+        <HeroOrbit size={240} rotation={178} shouldOrbit orbitDuration="16s">
+          <Planet img={Mercury} className="size-6" />
+        </HeroOrbit>
         <HeroOrbit
-          size={800}
+          size={350}
+          rotation={144}
+          shouldOrbit
+          orbitDuration="44s"
+          shouldSpin
+          spinDuration="10s"
+        >
+          <Planet img={Venus} className="size-12" />
+        </HeroOrbit>
+        <HeroOrbit size={380} rotation={240} shouldOrbit orbitDuration="52s">
+          <Planet img={Earth} className="size-12" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={450}
           rotation={-72}
           shouldOrbit
           orbitDuration="60s"
           shouldSpin
           spinDuration="15s"
         >
-          <StarIcon className="size-28 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20} shouldOrbit orbitDuration="34s">
-          <StarIcon className="size-12 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98} shouldOrbit orbitDuration="40s">
-          <StarIcon className="size-8 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-14} shouldOrbit orbitDuration="30s">
-          <SparkleIcon className="size-8 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={440} rotation={79} shouldOrbit orbitDuration="32s">
-          <SparkleIcon className="size-5 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={530} rotation={178} shouldOrbit orbitDuration="38s">
-          <SparkleIcon className="size-10 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={710}
-          rotation={144}
-          shouldOrbit
-          orbitDuration="50s"
-          shouldSpin
-          spinDuration="10s"
-        >
-          <SparkleIcon className="size-14 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={720} rotation={85}>
-          <div className="size-3 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="36s">
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+          <Planet img={Mars} className="size-8" />
         </HeroOrbit>
         <HeroOrbit
           size={650}
-          rotation={-5}
+          rotation={20}
           shouldOrbit
-          orbitDuration="42s"
-          shouldSpin
-          spinDuration="20s"
+          orbitDuration="88s"
+          spinDuration="44s"
         >
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+          <Planet img={Jupiter} className="size-20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={720}
+          rotation={320}
+          shouldOrbit
+          orbitDuration="100s"
+          spinDuration="48s"
+        >
+          <Planet img={Saturn} className="size-20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={780}
+          rotation={-54}
+          shouldOrbit
+          orbitDuration="108s"
+          spinDuration="54s"
+        >
+          <Planet img={Uranus} className="size-16" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={910}
+          rotation={79}
+          shouldOrbit
+          orbitDuration="120s"
+          shouldSpin
+          spinDuration="60s"
+        >
+          <Planet img={Neptune} className="size-16" />
         </HeroOrbit>
       </div>
-      <div className="container">
+      <div className="container inset-0 z-10">
         <div className="flex flex-col items-center">
           <Image
             src={memojiImage}
@@ -92,7 +121,10 @@ export const HeroSection = ({ id }: { id: string }) => {
           </div>
         </div>
         <div className="max-w-xl mx-auto">
-          <h1 className="font-serif font-semibold text-3xl md:text-5xl text-center mt-8 tracking-wide">
+          <h1
+            className="font-serif font-semibold text-3xl md:text-5xl text-center mt-8 tracking-wide
+          bg-gradient-to-bl from-emerald-300 to-sky-400 text-transparent bg-clip-text"
+          >
             Building Exceptional User Experiences
           </h1>
           <p className="mt-4 text-center text-white/600 md:text-lg">
@@ -102,14 +134,18 @@ export const HeroSection = ({ id }: { id: string }) => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-            <span className="font-semibold">Explore my work</span>
-            <ArrowDown className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold">Let&apos;s Connect</span>
-          </button>
+          <a href="#projects">
+            <Button className="bg-transparent text-white hover:border-white/15">
+              <span className="font-semibold">Explore my work</span>
+              <ArrowDown className="size-4" />
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button className="border-emerald-300 bg-gradient-to-r from-emerald-300 to-sky-400">
+              <span>👋</span>
+              <span className="font-semibold">Let&apos;s Connect</span>
+            </Button>
+          </a>
         </div>
       </div>
     </div>

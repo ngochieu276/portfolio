@@ -1,10 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 const sections = ["hero", "projects", "about", "contact"];
 
 export const Header = () => {
-  const [activeSection, setActiveSection] = useState(window.location.hash);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const hash = window.location.hash; // Lấy hash từ URL
+    setActiveSection(hash);
+  }, [pathname, searchParams]);
 
   useEffect(() => {
     const handleScroll = () => {

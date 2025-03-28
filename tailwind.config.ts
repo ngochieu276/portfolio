@@ -27,6 +27,7 @@ const config: Config = {
       },
       animation: {
         "ping-large": "ping-large 1s ease-in-out infinite",
+        "ping-small": "ping-small 1s ease-in-out infinite",
         "move-left": "move-left 1s linear infinite",
         "move-right": "move-right 1s linear infinite",
       },
@@ -34,6 +35,12 @@ const config: Config = {
         "ping-large": {
           "75%, 100%": {
             transform: "scale(3)",
+            opacity: "0",
+          },
+        },
+        "ping-small": {
+          "75%, 100%": {
+            transform: "scale(1.2) scaleY(1.2)",
             opacity: "0",
           },
         },

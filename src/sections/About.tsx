@@ -9,8 +9,11 @@ import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
+import NextJs from "@/assets/icons/nextjs.svg";
+import Nodejs from "@/assets/icons/nodejs.svg";
+import Typescript from "@/assets/icons/typescript.svg";
+import Sass from "@/assets/icons/sass.svg";
+
 import mapImage from "@/assets/images/map.png";
 import smileEmoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/card-header";
@@ -24,10 +27,6 @@ const toolboxItems = [
     iconType: JavascriptIcon,
   },
   {
-    title: "HTML5",
-    iconType: HTMLIcon,
-  },
-  {
     title: "CSS3",
     iconType: CssIcon,
   },
@@ -36,12 +35,24 @@ const toolboxItems = [
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
+    title: "NextJs",
+    iconType: NextJs,
   },
   {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "NodeJs",
+    iconType: Nodejs,
+  },
+  {
+    title: "Sass",
+    iconType: Sass,
+  },
+  {
+    title: "Typescript",
+    iconType: Typescript,
+  },
+  {
+    title: "HTML5",
+    iconType: HTMLIcon,
   },
 ];
 

@@ -1,49 +1,56 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import slackAppPage from "@/assets/images/slack-app-page.png";
+import slackLandingPage from "@/assets/images/slack-landingpage.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpright from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import SectionHeader from "@/components/section-header";
 import { Card } from "@/components/card";
+import Button from "@/components/button";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Slack App Clone",
+    year: "2024",
+    title: "Slack App Clone",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "A fully functional Slack clone with a similar UI and user experience",
+      },
+      {
+        title: "Realtime messaging powered by Socket.IO & Convex",
+      },
+      { title: "Online/offline status tracking" },
+      { title: "Channel & DM management" },
+      { title: "Modern UI built with Next.js 15 + Tailwind CSS" },
+      { title: "Secure authentication using NextAuth.js" },
+      { title: "File & image uploads" },
+      { title: "Fast message & user search" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "",
+    image: slackAppPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Slack Landing Page Clone",
+    year: "2024",
+    title: "Slack Landing Page Clone",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title:
+          "Pixel-perfect Slack landing page clone with a sleek and responsive design",
+      },
+      {
+        title:
+          "Built with Next.js 15 + Tailwind CSS for high performance and smooth animations",
+      },
+      { title: "Fully responsive" },
+      {
+        title: " Interactive UI elements that mimic the original Slack website",
+      },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "",
+    image: slackLandingPage,
   },
 ];
 
@@ -62,7 +69,6 @@ export const ProjectsSection = () => {
               key={project.title}
               className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-16"
               style={{ top: `calc(64px + ${idx * 60}px)` }}
-              // className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 "
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
@@ -85,23 +91,25 @@ export const ProjectsSection = () => {
                         key={result.title}
                         className="flex gap-2 text-sm md:text-base text-white/50"
                       >
-                        <CheckIcon className="size-5 md:size-6" />
+                        <div>
+                          <CheckIcon className="size-5 md:size-6 relative text-[#3EE7B7]" />
+                        </div>
                         <span>{result.title}</span>
                       </li>
                     ))}
                   </ul>
                   <a href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                    <Button className="border-emerald-300 mt-2 font-semibold bg-gradient-to-r from-emerald-300 to-sky-400">
                       <span>Visit Live Site</span>
                       <ArrowUpright className="size-4" />
-                    </button>
+                    </Button>
                   </a>
                 </div>
                 <div className="relative">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 lg:mt-0 -mb-4 md:-mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="mt-8 lg:mt-0 -mb-4 md:-mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none rounded-tl-xl rounded-bl-xl"
                   />
                 </div>
               </div>
