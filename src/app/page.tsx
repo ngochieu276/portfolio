@@ -6,10 +6,11 @@ import { TestimonialsSection } from "@/sections/Testimonials";
 import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <div>
+    <Suspense fallback={<div>Loading...</div>}>
       <Header />
       <HeroSection id="hero" />
       <section id="projects">
@@ -20,6 +21,6 @@ export default function Home() {
       <AboutSection id="about" />
       <ContactSection id="contact" />
       <Footer />
-    </div>
+    </Suspense>
   );
 }
