@@ -7,10 +7,12 @@ import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { Suspense } from "react";
+import Loading from "./loading";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Header />
       <HeroSection id="hero" />
       <section id="projects">
@@ -21,6 +23,7 @@ export default function Home() {
       <AboutSection id="about" />
       <ContactSection id="contact" />
       <Footer />
+      <ToastContainer />
     </Suspense>
   );
 }

@@ -28,7 +28,7 @@ const portfolioProjects = [
       { title: "File & image uploads" },
       { title: "Fast message & user search" },
     ],
-    link: "",
+    link: "https://nextjs15-slack-clone.vercel.app/auth",
     image: slackAppPage,
   },
   {
@@ -49,7 +49,7 @@ const portfolioProjects = [
         title: " Interactive UI elements that mimic the original Slack website",
       },
     ],
-    link: "",
+    link: "https://nextjs15-slack-clone.vercel.app",
     image: slackLandingPage,
   },
 ];
@@ -110,8 +110,8 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
-                    <Button className="border-emerald-300 mt-2 font-semibold bg-gradient-to-r from-indigo-300 to-violet-500">
+                  <a href={project.link} target="_blank">
+                    <Button className="border-indigo-300 mt-2 font-semibold bg-gradient-to-r from-indigo-300 to-violet-500">
                       <span>Visit Live Site</span>
                       <ArrowUpright className="size-4" />
                     </Button>
