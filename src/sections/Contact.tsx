@@ -1,5 +1,6 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
+import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 
 export const ContactSection = ({ id }: { id: string }) => {
   return (
@@ -22,15 +23,42 @@ export const ContactSection = ({ id }: { id: string }) => {
                 discuss how I can help you achieve your goals.
               </p>
             </div>
-            <div>
-              <button className="text-white bg-gray-900 inline-flex justify-center items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
-                <span className="font-semibold">Contact Me</span>
-                <ArrowUpRightIcon className="size-4" />
-              </button>
+            <div className="grid grid-cols-4 gap-8 ">
+              <Social link="https://www.instagram.com/ngoc_hieu276">
+                <Instagram />
+              </Social>
+              <Social link="https://www.facebook.com/hieu.ngoc.10048379">
+                <Facebook />
+              </Social>
+              <Social link="https://www.linkedin.com/in/hi%E1%BA%BFu-ng%E1%BB%8Dc-40b613148">
+                <Linkedin />
+              </Social>
+              <Social link="https://github.com/ngochieu276">
+                <Github />
+              </Social>
             </div>
           </div>
         </div>
       </div>
     </div>
+  );
+};
+
+const Social = ({
+  link,
+  children,
+}: {
+  link?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      className="size-12 rounded-full bg-white flex items-center justify-center cursor-pointer group hover:bg-gradient-to-r hover:from-violet-800 hover:to-indigo-300 transition-all duration-500
+      hover:shadow-white hover:shadow-lg"
+    >
+      <div className=" group-hover:text-white">{children}</div>
+    </a>
   );
 };

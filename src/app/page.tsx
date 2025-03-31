@@ -7,10 +7,11 @@ import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function Home() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Header />
       <HeroSection id="hero" />
       <section id="projects">
