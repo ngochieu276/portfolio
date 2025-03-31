@@ -8,6 +8,7 @@ import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <AboutSection id="about" />
       <ContactSection id="contact" />
       <Footer />
+      <ToastContainer />
     </Suspense>
   );
 }

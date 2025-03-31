@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 const Button = ({
   children,
   className,
-}: PropsWithChildren<{ className?: string }>) => {
+}: ButtonHTMLAttributes<{ className?: string }>) => {
   return (
     <button
       className={twMerge(

@@ -111,7 +111,7 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href={project.link} target="_blank">
-                    <Button className="border-emerald-300 mt-2 font-semibold bg-gradient-to-r from-indigo-300 to-violet-500">
+                    <Button className="border-indigo-300 mt-2 font-semibold bg-gradient-to-r from-indigo-300 to-violet-500">
                       <span>Visit Live Site</span>
                       <ArrowUpright className="size-4" />
                     </Button>
