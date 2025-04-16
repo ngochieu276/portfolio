@@ -39,8 +39,10 @@ export const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    if (window.innerWidth > 780) {
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
+    }
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
